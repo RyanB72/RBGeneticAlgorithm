@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "R:\\Ryan\\Desktop\\testin\\GeneticAlgorithm\\GeneticAlgorithm.csproj": {}
+    "R:\\Users\\Ryan\\Documents\\GitHub\\RBGeneticAlgorithm\\GeneticAlgorithm\\GeneticAlgorithm.csproj": {}
   },
   "projects": {
-    "R:\\Ryan\\Desktop\\testin\\GeneticAlgorithm\\GeneticAlgorithm.csproj": {
+    "R:\\Users\\Ryan\\Documents\\GitHub\\RBGeneticAlgorithm\\GeneticAlgorithm\\GeneticAlgorithm.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "R:\\Ryan\\Desktop\\testin\\GeneticAlgorithm\\GeneticAlgorithm.csproj",
+        "projectUniqueName": "R:\\Users\\Ryan\\Documents\\GitHub\\RBGeneticAlgorithm\\GeneticAlgorithm\\GeneticAlgorithm.csproj",
         "projectName": "GeneticAlgorithm",
-        "projectPath": "R:\\Ryan\\Desktop\\testin\\GeneticAlgorithm\\GeneticAlgorithm.csproj",
+        "projectPath": "R:\\Users\\Ryan\\Documents\\GitHub\\RBGeneticAlgorithm\\GeneticAlgorithm\\GeneticAlgorithm.csproj",
         "packagesPath": "C:\\Users\\Ryan\\.nuget\\packages\\",
-        "outputPath": "R:\\Ryan\\Desktop\\testin\\GeneticAlgorithm\\obj\\",
+        "outputPath": "R:\\Users\\Ryan\\Documents\\GitHub\\RBGeneticAlgorithm\\GeneticAlgorithm\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

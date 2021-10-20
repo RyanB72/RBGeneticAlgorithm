@@ -29,6 +29,11 @@ namespace GeneticAlgorithm
             for (int i=0; i<mc.pool.Length; i++)
             {
                 mc.pool[i] = new Population(mc.fetchRandomArray(rand));
+
+                if (rand.NextDouble() > 0.5)
+                {
+                    mc.pool[i].setYNegative();
+                }
             }
 
             //from the pool, create the next generation 'numberOfGen' times
@@ -135,7 +140,13 @@ namespace GeneticAlgorithm
             {
                 arr[i] = b.set[i];
             }
-            return new Population(arr);
+
+            Population ans = new Population(arr);
+            if(b.yIsNeg)
+            {
+                ans.setYNegative();
+            }
+            return ans;
         }
 
         //Two populations are parsed, the one with the smaller fitness is returned
@@ -152,10 +163,10 @@ namespace GeneticAlgorithm
 
         //returns an int array of size 10 where most of the values are randomly between [0, 10)
         //value a[0] is either 0 or 1. because any other value will exceed bounds
-        //value a[5] is between [-2,2] because any other value will exceed bounds
+        //value a[5] is between [0,2] because any other value will exceed bounds (yIsNeg will dictate if 0, 1 or 2 is negative or not)
         public int[] fetchRandomArray(Random rand)
         {
-            int[] a = { rand.Next(0, 2), rand.Next(0, 10), rand.Next(0, 10), rand.Next(0, 10), rand.Next(0, 10), rand.Next(-2, 3), rand.Next(0, 10), rand.Next(0, 10), rand.Next(0, 10), rand.Next(0, 10)}; ;
+            int[] a = { rand.Next(0, 2), rand.Next(0, 10), rand.Next(0, 10), rand.Next(0, 10), rand.Next(0, 10), rand.Next(0, 3), rand.Next(0, 10), rand.Next(0, 10), rand.Next(0, 10), rand.Next(0, 10)}; ;
             return a;
         }
     }

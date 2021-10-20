@@ -9,6 +9,8 @@ namespace GeneticAlgorithm
     -Its genes are held in 'set'. A size 10 integer array
     -The genes repersent 2 numbers. Each with a single digit and 4 decimal places
 
+    -The bool 'yIsNeg' tells you if the value 'y' is negative. This is needed as the integer -0 does not exist
+
     for example the set [0,1,2,3,4,5,6,7,8,9] represents the following 2 numbers
     x = 0.1234
     y = 5.6789
@@ -19,6 +21,7 @@ namespace GeneticAlgorithm
         public double x;
         public double y;
         public double fitness;
+        public bool yIsNeg = false;
 
         //intialize the population to have a set
         //Then calculate the numbers it represents
@@ -27,6 +30,14 @@ namespace GeneticAlgorithm
         {
             set = values;
             setDoubles(values);
+            calculateFitness();
+        }
+
+        //sets the bool to true and recalculates x, y and fitness
+        public void setYNegative()
+        {
+            yIsNeg = true;
+            setDoubles(set);
             calculateFitness();
         }
 
@@ -45,16 +56,16 @@ namespace GeneticAlgorithm
 
             for (int i = 6; i < 10; i++)
             {
-                if(y < 0)
-                {
-                    y -= values[i] * Math.Pow(10, 9 - i);
-                } else
-                {
-                    y += values[i] * Math.Pow(10, 9 - i);
-                }
-                
+                y += values[i] * Math.Pow(10, 9 - i);
             }
-            y = y / 10000;
+
+            if(yIsNeg)
+            {
+                y = (y / 10000)* -1;
+            } else
+            {
+                y = y / 10000;
+            }
         }
 
         //Loop over all pieces of the set, by the probability of 'chance' randomize a piece
